@@ -22,7 +22,7 @@ func init() {
 		log.Fatal("env load error")
 	}
 	log.Println("env file loaded")
-	mongoClient, err := mongo.Connect(context.Background(), options.Client().ApplyURI(os.Getenv("MONGO_URI")))
+	mongoClient, err = mongo.Connect(context.Background(), options.Client().ApplyURI(os.Getenv("MONGO_URI")))
 	if err != nil {
 		log.Fatal("connection error", err)
 	}
