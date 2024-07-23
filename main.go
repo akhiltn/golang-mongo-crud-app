@@ -39,12 +39,12 @@ func main() {
 	empService := usecase.EmployeeService{MongoCollection: coll}
 	r := mux.NewRouter()
 	r.HandleFunc("/health", healthHandler).Methods(http.MethodGet)
-  r.HandleFunc("/employee", empService.CreateEmployee).Methods(http.MethodPost)
-  r.HandleFunc("/employee/{id}", empService.GetEmployeeByID).Methods(http.MethodGet)
-  r.HandleFunc("/employee", empService.GetAllEmployee).Methods(http.MethodGet)
-  r.HandleFunc("/employee/{id}", empService.UpdateEmployeeByID).Methods(http.MethodPut)
-  r.HandleFunc("/employee/{id}", empService.DeleteEmployeeByID).Methods(http.MethodDelete)
-  r.HandleFunc("/employee", empService.DeleteAllEmployee).Methods(http.MethodDelete)
+	r.HandleFunc("/employee", empService.CreateEmployee).Methods(http.MethodPost)
+	r.HandleFunc("/employee/{id}", empService.GetEmployeeByID).Methods(http.MethodGet)
+	r.HandleFunc("/employee", empService.GetAllEmployee).Methods(http.MethodGet)
+	r.HandleFunc("/employee/{id}", empService.UpdateEmployeeByID).Methods(http.MethodPut)
+	r.HandleFunc("/employee/{id}", empService.DeleteEmployeeByID).Methods(http.MethodDelete)
+	r.HandleFunc("/employee", empService.DeleteAllEmployee).Methods(http.MethodDelete)
 	log.Println("server is running at :4444")
 	http.ListenAndServe(":4444", r)
 }
