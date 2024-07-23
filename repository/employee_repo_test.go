@@ -52,7 +52,7 @@ func TestMongoOperation(t *testing.T) {
 		t.Log("emp 1", result.Name)
 	})
 	t.Run("Get all employee", func(t *testing.T) {
-		result, err := empRepo.findAllEmployee()
+		result, err := empRepo.FindAllEmployee()
 		if err != nil {
 			t.Fatal("get operation failed", err)
 		}
@@ -85,7 +85,7 @@ func TestMongoOperation(t *testing.T) {
 		t.Log("emplyees", result)
 	})
 	t.Run("Get All Employee After delete", func(t *testing.T) {
-		results, err := empRepo.findAllEmployee()
+		results, err := empRepo.FindAllEmployee()
 		if err != nil {
 			t.Fatal("get operation failed", err)
 		}
